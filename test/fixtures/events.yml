@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  elite_id: 1
+  music_genre: 
+  is_official: false
+  is_active: false
+
+two:
+  elite_id: 1
+  music_genre: 
+  is_official: false
+  is_active: false

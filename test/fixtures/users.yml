@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  gender: MyString
+  favorite_genre: MyString
+  event_id: 1
+  birthday: 2016-04-27 00:28:18
+
+two:
+  location: MyString
+  gender: MyString
+  favorite_genre: MyString
+  event_id: 1
+  birthday: 2016-04-27 00:28:18
