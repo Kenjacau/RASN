@@ -4,7 +4,7 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
-
+sh "git pull origin master"
 desc "Default Git Add, Commit, Push"
 task :git do
 puts "Enter your commit message:"
