@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
+  devise_for :users
 
-  get 'static_pages/patron'
+  root             'static_pages#home'
+  get 'patron'    => 'static_pages#patron'
+  get 'elite'    => 'static_pages#elite'
 
-  get 'static_pages/elite'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

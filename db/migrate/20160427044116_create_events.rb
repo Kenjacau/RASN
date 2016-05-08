@@ -1,7 +1,7 @@
 class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
-      t.integer :elite_id
+      t.integer :user_id
       t.string :music_genre
       t.string :location
       t.boolean :is_official

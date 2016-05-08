@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  num_of_events: 1
-  is_authorized: false
-
-two:
-  num_of_events: 1
-  is_authorized: false
