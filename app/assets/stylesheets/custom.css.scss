@@ -1,15 +1,60 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$bgDefault      : #233645;
+$bgHighlight    : #345065;
+$colDefault     : #ecf0f1;
+$colHighlight       : #ABCDCF;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
 
-/* mixins, variables, etc. */
-
-$gray-medium-light: #eaeaea;
-
+$gray-medium-light: #eaece5;
+body { background: #345065 !important; }
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
+}
+.nav li {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6em;
+    line-height: 30px;
+    height: 30px;
+
 }
 
 /* universal */
@@ -66,14 +111,16 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 1.6em;
+  line-height: 20px;
+  height: 20px;
   color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
-    color: white;
+    color: ABCDCF;
     text-decoration: none;
   }
 }

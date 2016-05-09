@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
+  get 'events/new'
+
   devise_for :users
 
   root             'static_pages#home'
   get 'patron'    => 'static_pages#patron'
   get 'elite'    => 'static_pages#elite'
-
+resources :events
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

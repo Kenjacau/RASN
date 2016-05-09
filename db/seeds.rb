@@ -19,13 +19,13 @@ end
 
 user =
 [
-  ["anon", "anon@gmail.com","password","House"],
- ["anon2", "anon2@gmail.com","password","EDM"],
- ["anon3", "anon3@gmail.com","password","Rock"],
+  ["anon", "anon@gmail.com","password","password","House"],
+ ["anon2", "anon2@gmail.com","password","password","EDM"],
+ ["anon3", "anon3@gmail.com","password","password","Rock"],
 ]
 
-user.each do |username, password,email,favorite_genre|
+user.each do |username, password,email,password_confirmation,favorite_genre|
 
   User.create(username: username,email: email, password: password,
-   favorite_genre: favorite_genre)
+  password_confirmation: password_confirmation, favorite_genre: favorite_genre)
 end

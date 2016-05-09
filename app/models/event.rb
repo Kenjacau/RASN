@@ -3,4 +3,6 @@ class Event < ActiveRecord::Base
   has_many :playlist_songs
   has_many :events
   has_many :votes
+
+  #validates :duration,  presence: true, length: { maximum: 2 }
 end

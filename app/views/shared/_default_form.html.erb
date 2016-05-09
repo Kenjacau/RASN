@@ -1,17 +1,40 @@
-<%= form_for(@user) do |f| %>
-     <%= render 'shared/error_messages' %>
+<%= form_for(@event) do |f| %>
+<%= render 'shared/error_messages' %>
 
-     <%= f.label :name %>
-     <%= f.text_field :name, class: 'form-control' %>
+<div class="row field">
+<%= f.label :name, "Your Event Name" %>
+<%= f.text_field :name, class: 'form-control' %>
+</div>
 
-     <%= f.label :email %>
-     <%= f.email_field :email, class: 'form-control' %>
+<div class="row field">
+  <%= f.label :music_genre %><br/>
+  <div class="row col-sm-3">
+    <%= f.radio_button(:music_genre, "pop") %>
+    <%= f.label(:music_genre_pop, "Pop") %>
+    <%= f.radio_button(:music_genre, "house") %>
+    <%= f.label(:music_genre_house, "House") %>
+    <%= f.radio_button(:music_genre, "hiphop") %>
+    <%= f.label(:music_genre_hiphop, "HipHop") %>
+  </div>
+  <div class="row col-sm-3">
+    <%= f.radio_button(:music_genre, "edm") %>
+    <%= f.label(:music_genre_edm, "EDM") %>
+    <%= f.radio_button(:music_genre, "latin") %>
+    <%= f.label(:music_genre_latin, "Latin") %>
+    <%= f.radio_button(:music_genre, "rock") %>
+    <%= f.label(:music_genre_rock, "Rock") %>
+  </div>
+</div>
+<div class="row field">
+  <%= f.label :location, "Zipcode" %>
+  <%= f.text_field :location, class: 'form-control' %>
 
-     <%= f.label :password %>
-     <%= f.password_field :password, class: 'form-control' %>
+  <%= f.label :duration, "Duration(Hours)" %>
+  <%= f.number_field :duration, type: 'number', :in => 1...10, :step =>1%>
 
-     <%= f.label :password_confirmation, "Confirmation" %>
-     <%= f.password_field :password_confirmation, class: 'form-control' %>
+  <%= f.label :start_date, "Start Date and Time" %>
+  <%= f.datetime_local_field :start_date, class: 'form-control' %>
+</div>
 
-     <%= f.submit "#{submit}", class: "btn btn-primary" %>
-   <% end %>
+<%= f.submit "#{submit}", class: "btn btn-primary" %>
+<% end %>

@@ -18,13 +18,14 @@ ActiveRecord::Schema.define(version: 20160507223213) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
+    t.string   "name",                        null: false
     t.string   "music_genre"
     t.string   "location"
-    t.boolean  "is_official"
+    t.boolean  "is_official", default: false
     t.time     "duration"
     t.datetime "start_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "playlist_songs", force: :cascade do |t|
@@ -80,10 +81,6 @@ ActiveRecord::Schema.define(version: 20160507223213) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
     t.integer  "failed_attempts",        default: 0,     null: false
     t.string   "unlock_token"
     t.datetime "locked_at"

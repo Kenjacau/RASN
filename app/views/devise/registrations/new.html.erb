@@ -2,18 +2,20 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+<div class="container">
 
-  <div class="field">
+
+  <div class="row field">
    <%= f.label :username %>
    <%= f.text_field :username%>
  </div>
 
-  <div class="field">
+  <div class="row field">
     <%= f.label :email %><br />
     <%= f.email_field :email %>
   </div>
 
-  <div class="field">
+  <div class="row field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -21,42 +23,47 @@
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="row field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-  <div class="field">
+  <div class="row field">
     <%= f.label :gender %><br />
-    <%= radio_button_tag(:gender, "Male") %>
-    <%= label_tag(:gender, "Male") %>
-    <%= radio_button_tag(:gender, "Female") %>
-    <%= label_tag(:gender, "Female") %>
+<div class="row">
+  <%= radio_button_tag(:gender, "Male") %>
+  <%= label_tag(:gender, "Male") %>
+</div>
+    <div class="row">
+
+      <%= radio_button_tag(:gender, "Female") %>
+      <%= label_tag(:gender, "Female") %>
+    </div>
+
   </div>
 
-  <div class="field">
+  <div class="row field">
     <%= f.label :favorite_genre %><br />
-    <div class="col-sm-6">
-      <%= radio_button_tag(:favorite_genre, "Pop") %>
-      <%= label_tag(:favorite_genre, "Pop") %>
-      <%= radio_button_tag(:favorite_genre, "House") %>
-      <%= label_tag(:favorite_genre, "House") %>
-      <%= radio_button_tag(:favorite_genre, "HipHop") %>
-      <%= label_tag(:favorite_genre, "HipHop") %>
+    <div class="row col-sm-3">
+      <%= f.radio_button(:favorite_genre, "Pop") %>
+      <%= f.label(:favorite_genre, "Pop") %>
+      <%= f.radio_button(:favorite_genre, "House") %>
+      <%= f.label(:favorite_genre, "House") %>
+      <%= f.radio_button(:favorite_genre, "HipHop") %>
+      <%= f.label(:favorite_genre, "HipHop") %>
     </div>
-    <div class="col-sm-6">
-      <%= radio_button_tag(:favorite_genre, "EDM") %>
-      <%= label_tag(:favorite_genre, "EDM") %>
-      <%= radio_button_tag(:favorite_genre, "Latin") %>
-      <%= label_tag(:favorite_genre, "Latin") %>
-      <%= radio_button_tag(:favorite_genre, "Rock") %>
-      <%= label_tag(:favorite_genre, "Rock") %>
+    <div class="row col-sm-3">
+      <%= f.radio_button(:favorite_genre, "EDM") %>
+      <%= f.label(:favorite_genre, "EDM") %>
+      <%= f.radio_button(:favorite_genre, "Latin") %>
+      <%= f.label(:favorite_genre, "Latin") %>
+      <%= f.radio_button(:favorite_genre, "Rock") %>
+      <%= f.label(:favorite_genre, "Rock") %>
     </div>
-      
 
   </div>
 
-  <div class="field">
+  <div class="row field">
    <%= f.label :location %>
    <%= f.text_field :location%>
  </div>
@@ -64,6 +71,7 @@
 
   <div class="actions">
     <%= f.submit "Sign up" %>
+  </div>
   </div>
 <% end %>
 
